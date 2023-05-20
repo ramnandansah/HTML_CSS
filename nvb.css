@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    padding: 15px 50px;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 25px;
+    background-color: lightblue;
+
+}
+ 
+nav p {
+    cursor: pointer;
+}
+
+nav p:hover {
+    text-decoration: underline;
+    color: red
+}
+
+nav select {
+    border: none;
+    /* background-color: lightblue; */
+    background-color: transparent;
+}
+ 

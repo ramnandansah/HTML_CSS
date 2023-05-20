@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form (input type & label for)</title>
+</head>
+
+<body>
+
+    <form action="https://github.com/ramnandansah/myProject" target="_blank">
+        <fieldset>
+            <legend>Personal Infromation:-</legend>
+            <h4>Candidates Login Credentials:</h4>
+            <label for="fname">Enter Your Name Here:</label>
+            <input type="text" id="fname" name="formname" placeholder="Enter Your Name Here" autocomplete="off"
+                required>
+            <br><br>
+            <!-- [yaha pe autocomplete off kaa matlab hai jab ham input type pe (enter your name here ke upar) cursor le jaayenge to niche hint text box
+        nahi khulega, by default autocomplete on rahta hai islie phone nbr daalne wala jagah pe hint text khulegaa. 
+        And 2nd one is required kaa matlab hota hai nessesary hai bharna use bhare bina ham submit nahi kar sakte aur "Please fill this field"
+        hint text kaa bhi facility provide karta hai cursor rakhne pe] -->
+            <label for="password">Enter Your Secret Password:</label>
+            <input type="password" id="cpassword" name="candidates password">
+            <br><br>
+            <label for="phoneid">Phone</label>
+            <input type="tel" id="phoneid" name="phonenumber" placeholder="5555555555"
+                pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+            <br><br>
+            <label for="sdate">Date And Time:</label>
+            <input type="datetime-local" id="sdate" name="selecteddate" value="satyug">
+        </fieldset>
+        <br>
+
+        <label for="drinkid">Favourite Coffees And Drinks:-</label><br><br>
+        <select name="coffees_and_expresso_drinks" id="drinkid" multiple size="5">
+            <!-- [yaha value daalne kii jaruri nahi hai aur select me daala bhi nahi jaata hai, wo input type me jaha jaruri hota wahi daalte hai, 
+            haa multiple size 5 daale hai qki scroll karana hai, aur 5 hii daale hai qki 7 yaa 8 list hai to jitna list rahegaa use kam matlab
+            aadha ke aas pass taaki scroll ho.]   -->
+            <optgroup label="Coffees">
+                <option value="regular coffee">Regular Coffee</option>
+                <option value="iced coffee">Iced Coffee</option>
+            </optgroup>
+            <optgroup label="Espresso Drinks">
+                <option value="latte">Latte</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="cortado">Cortado</option>
+                <option value="americano">Americano</option>
+            </optgroup>
+            <optgroup label="Other">
+                <option value="none">None</option>
+            </optgroup>
+        </select>
+        <br>
+        <!-- [optgroup yaa uske andar label ka use isliye kiye hai taaki list me group list banane keliye, matlab parent list aur child list.] -->
+
+        <p>Products:-</p>
+        <select name="carname" id="carid">
+            <option value="Cars" selected disabled hidden>Cars</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mecedes">Mercedes</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+            <option value="honda">Honda</option>
+        </select>
+        <br><br>
+        <!-- [selected means yaha jiske bagal me selected likha rahega by default wha box me wo show karta rahega.] -->
+
+        <label for="addressid">Enter Your Address:</label><br>
+        <textarea name="" id="addressid" cols="70" rows="7"></textarea>
+        <br><br>
+        <label for="button">Please Click On Press Button:</label>
+        <input type="button" id="buttonid" name="press_button" value="BUTTON">
+        <br><br>
+        <label for="submitid">Please Click On Submit Button:</label>
+        <input type="submit" id="submitid" name="submit_button" value="SUBMIT">
+        <br><br>
+
+        <fieldset>
+            <legend>Education Details:-</legend>
+            <h4>Choose Your Favorite Web Language:</h4>
+            <input type="radio" id="cssid" name="langname" value="css">
+            <label for="cssid">CSS</label>
+            <br><br>
+            <input type="radio" id="htmlid" name="langname" value="HTML">
+            <label for="htmlid">HTML</label>
+            <br><br>
+            <input type="radio" id="javascriptid" name="langname" value="JAVASCRIPT">
+            <label for="javascriptid">JAVASCRIPT</label>
+            <!-- (If we named radio button by different name then we select multiple options, otherwise we select only one option if name of radio 
+        button is same. If we want to apply both condition then for clearification suppose above code has 3 radio button if we want to select two  
+        option and one option CSS is compulsory then we change only name of css [langname1] and keep same name for remaining option, by this 
+        candidate able to select css option which is essential for everyone and also able to select another one option in remaing option.
+        Aur sabse upar jo form ke baad action me link daale hai uska matlab kii us link pe form kaa bhara hua data store hoga [backendwork]readblw
+        lakin yaad rahe button me input type submit[*] hona compulsory hai, agar input type button rahegaa to bas button press hoga.
+        Sabse upar form me link ke baad taget="_blank" karne se submit karne baad naya page khulega aur hamra purana working page safe rahega.
+        these conditions are also applied for storage location [means file name] as well as link. ) -->
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Send Me A Note</legend>
+            <label for="messageid">Your Message:</label><br>
+            <textarea name="message" id="messageid" cols="30" rows="10"
+                placeholder="Type your message here."></textarea>
+        </fieldset>
+        <br>
+        <input type="submit" id="submitid" name="submit_button" value="SUBMIT">
+        <input type="submit" formaction="//github.com/ramnandansah/myProject" formmethod="post" value="Post">
+        <input type="button" id="buttonid" name="reset_button" value="Reset">
+    </form>
+
+</body>
+
+</html>
